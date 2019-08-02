@@ -1,0 +1,7 @@
+1. QCamera必须设置一个取景器QCameraViewfinder, 但是这个取景器的预览显示效果在安卓中不可用
+2.使用QVideoProbe来监视视频帧的采集, 并获取每一帧数据
+3.在安卓上摄像头采集到的帧格式为NV21或者YV12
+4.使用ffmpeg将YV12帧转换为BRG24
+5.将BRG24帧封装为QImage, 然后绘制在窗口上
+
+

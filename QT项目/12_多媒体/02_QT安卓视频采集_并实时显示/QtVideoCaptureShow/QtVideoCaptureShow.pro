@@ -1,16 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-05-22T11:35:31
+# Project created by QtCreator 2019-07-29T19:40:47
 #
 #-------------------------------------------------
 
-QT       += core gui
-QT += multimedia
-QT += multimediawidgets
+QT       += core gui multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = VideoTool
+TARGET = QtVideoCaptureShow
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -28,15 +26,47 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        widget.cpp
+        widget.cpp \
+    ffm.cpp
 
 HEADERS += \
-        widget.h
+        widget.h \
+    ffm.h
 
 FORMS += \
         widget.ui
+
+CONFIG += mobility
+MOBILITY = 
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+
+win32: LIBPATH=-L$$PWD/../../lib/win64/
+unix:!macx: LIBPATH=-L$$PWD/../../lib/armeabi-v7a/
+
+LIBS += $${LIBPATH} \
+    -lavformat \
+    -lavcodec \
+    -lavutil \
+    -lswresample \
+    -lswscale
+INCLUDEPATH += $$PWD/../../lib/armeabi-v7a
+DEPENDPATH += $$PWD/../../lib/armeabi-v7a
+INCLUDEPATH += $$PWD/../../include
+DEPENDPATH += $$PWD/../../include
+
+contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+    ANDROID_EXTRA_LIBS = \
+        $$PWD/../../lib/armeabi-v7a/libavcodec.so \
+        $$PWD/../../lib/armeabi-v7a/libavfilter.so \
+        $$PWD/../../lib/armeabi-v7a/libavformat.so \
+        $$PWD/../../lib/armeabi-v7a/libavutil.so \
+        $$PWD/../../lib/armeabi-v7a/libopencv_java4.so \
+        $$PWD/../../lib/armeabi-v7a/libswresample.so \
+        $$PWD/../../lib/armeabi-v7a/libswscale.so
+}

@@ -5,3 +5,7 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp
+
+INCLUDEPATH += $$PWD/../../include
+LIBPATH = $$PWD/../../lib
+LIBS += -L$$LIBPATH -llibmysql

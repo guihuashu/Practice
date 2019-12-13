@@ -1,10 +1,16 @@
-
 #include <iostream>
-#include <mysql.h>
+
+using namespace std;
+
+#define ITOC(a) #a
+#define CC(a,b) (a##b)
 int main()
 {
-    MYSQL sql;
-    mysql_init(&sql);
-    std::cout << "Hello World!\n";
+    cout << "Hello World!" << endl;
+    int i= 2;
+    printf(ITOC(i));
+    printf("\n");
+    printf(CC(2,"bb"));
     return 0;
+
 }

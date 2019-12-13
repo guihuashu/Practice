@@ -1,9 +1,0 @@
-﻿  ConsoleApplication1.cpp
-e:\github__\practice\mysqlcode\src\consoleapplication1\consoleapplication1.cpp(9): warning C4101: “sql”: 未引用的局部变量
-    正在创建库 E:\Github__\Practice\mysqlCode\src\ConsoleApplication1\x64\Release\ConsoleApplication1.lib 和对象 E:\Github__\Practice\mysqlCode\src\ConsoleApplication1\x64\Release\ConsoleApplication1.exp
-  正在生成代码
-  1 of 10 functions (10.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  已完成代码的生成
-  ConsoleApplication1.vcxproj -> E:\Github__\Practice\mysqlCode\src\ConsoleApplication1\x64\Release\ConsoleApplication1.exe

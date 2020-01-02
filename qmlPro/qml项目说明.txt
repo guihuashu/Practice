@@ -1,0 +1,6 @@
+ImageViewV1	// qml图片浏览器第一版
+	1.左下角的open按钮,但机会调用FileDialog让用户选择图片文件
+	2.如果用户选择了Image,就用Image显示出来,同时在Open按钮右侧显示图片路径
+callQml
+	演示了从C++中调用Qml
+

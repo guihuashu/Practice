@@ -63,7 +63,7 @@ int main()
     }
     cout<<endl;
 
-    // 变量结果集中的所有字段信息
+    // 遍历结果集中的所有字段信息
     while (row = mysql_fetch_row(result)){      // 一行
         lengths = mysql_fetch_lengths(result);  // 读取该行中的字段信息长度
         for (int i=0; i < fieldsNum; ++i){      // 打印

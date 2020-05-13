@@ -88,8 +88,9 @@ int ListDelete(LinkList *list, int i, ElemType *e)
         // pos为删除位置的前一项
         if (e)
             *e = pos->next->data;
-        pos->next = pos->next->next;
-        free(pos->next);
+        LinkList del = pos->next;       // 被删除的元素
+        pos->next = del->next;
+        free(del);
     }
     return 0;
 }
@@ -168,7 +169,7 @@ int ListMidNode(LinkList list)
     return midPos;
 }
 
-// 链表逆序
+// 不分配新空间,逆序链表。
 void ListReverse(LinkList *list)
 {
     /* p1(head prePos) p2(pos)          p3     // head = p1, prePos=p1, pos=p2

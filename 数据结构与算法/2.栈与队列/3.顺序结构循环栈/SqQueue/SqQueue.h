@@ -9,8 +9,8 @@ typedef int ElemType;
 #define MAXSIZE 5
 typedef struct {
     ElemType data[MAXSIZE];
-    int front;
-    int rear;
+    int front;  // 队头元素的下标
+    int rear;   // 队尾的下一个元素的下标
 }SqQueue;
 
 // 初始化顺序循环队列
